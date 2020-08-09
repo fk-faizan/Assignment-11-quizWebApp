@@ -15,19 +15,16 @@
 <body>
     <div class="wrapper">
         <div class="quiz">
-            <div class="quiz-header">
+            <div class="result-header">
                 <div class="quiz-user">
-                    <h4>Welcome! <span class="name"></span></h4>
-                </div>
-                <div class="quiz-timer">
-                    <span class="time">00</span>
+                    <h4>Your Result</h4>
                 </div>
             </div>
-            <div class="quiz-body">
-                <div id="questions-detail"></div>
-                <div id="questions"></div>
-                <div class="d-flex justify-content-end">
-                    <button class="btn btn-outline-primary" onclick="next()">Next Question</button>
+            <div class="result-body">
+                <div class="content">
+                    <h3 class="userName">Well done! <span class="name"></span></h3>
+                    <p class="userTltQues" style="font-size: 1.4em; font-weight:bold;">Total McQ's: <span class="mcqs"></span></p>
+                    <p class="userPoints" style="font-size: 1.4em; font-weight:bold;">Your Poins: <span class="points"></span></p>
                 </div>
             </div>
         </div>
@@ -42,3 +39,13 @@
 <script src="./../js/app.js"></script>
 
 </html>
+
+<script>
+    let userName = sessionStorage.getItem('name');
+    let userTltQues = sessionStorage.getItem('tltQues');
+    let userPoints = sessionStorage.getItem('points');
+
+    document.querySelector(".name").innerHTML = userName;
+    document.querySelector(".mcqs").innerHTML = userTltQues;
+    document.querySelector(".points").innerHTML = userPoints;
+</script>
